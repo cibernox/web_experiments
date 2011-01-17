@@ -29,7 +29,7 @@
           <file leaf-file-name="3dtransforms.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/coverflow with css3 transforms/3dtransforms.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
                   <folding />
                 </state>
               </provider>
@@ -44,28 +44,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
+          <file leaf-file-name="base.html" pinned="false" current="true" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/base.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="9" column="10" selection-start="221" selection-end="221" vertical-scroll-proportion="-6.75">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="21" column="6" selection-start="186" selection-end="186" vertical-scroll-proportion="0.5762195">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Readme" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Readme">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
+                <state line="10" column="34" selection-start="424" selection-end="424" vertical-scroll-proportion="0.28169015">
                   <folding />
                 </state>
               </provider>
@@ -290,14 +272,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="10" selection-start="221" selection-end="221" vertical-scroll-proportion="-6.75">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Readme">
+    <entry file="file://$PROJECT_DIR$/Readme.markdown">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="12" selection-start="12" selection-end="12" vertical-scroll-proportion="0.0">
           <folding />
@@ -306,7 +281,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="6" selection-start="186" selection-end="186" vertical-scroll-proportion="0.5762195">
+        <state line="21" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.5762195">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="34" selection-start="424" selection-end="424" vertical-scroll-proportion="0.28169015">
           <folding />
         </state>
       </provider>
