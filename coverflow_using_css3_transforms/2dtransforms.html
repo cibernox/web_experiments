@@ -4,54 +4,36 @@
   <meta charset=utf-8 />
   <title>Coverflow using css 2D transforms</title>
   <link href="../common.css" rel="stylesheet">
+  <link href="cards.css" rel="stylesheet">
   <script src="../jquery-1.5b1.js"></script>
+  <script src="../modernizr-1.6.min.js"></script>
   <style>
-    #demo { overflow: hidden; }
-    #slider{
-      width: 1000%;
-      padding-left: 320px;
-      -moz-transition-property: margin;
-      -webkit-transition-property: margin;
-      transition-property: margin;
-      -moz-transition-duration: 1s;
-      -webkit-transition-duration: 1s;
-      -o-transition-duration: 1s;
-      transition-duration: 1s;
-    }
-    .card {
-      float: left;
-      width: 300px;
-      height: 300px; 
-      background: white;
-      margin: 10px -65px;
-      -moz-transition-property: margin,transform,opacity;
-      -webkit-transition-property: margin,transform,opacity;
-      transition-property: margin,transform,opacity;
-      -moz-transition-duration: 1s;
-      -webkit-transition-duration: 1s;
-      -o-transition-duration: 1s;
-      transition-duration: 1s;
-    }
-    .card.left, .card.right { opacity: 0.2; }
-    .card.left.first, .card.right.first { opacity: 0.5; }
     .card.left {
-      -moz-transform: skewy(-25deg) scale(0.6);
-      -webkit-transform: skewy(-25deg) scale(0.6);
-      -o-transform: skewy(-25deg) scale(0.6);
-      -ms-transform: skewy(-25deg) scale(0.6);
-      transform: skewy(-25deg) scale(0.6);
+      -moz-transform:    matrix(0.500, -0.333, 0.000, 0.667, 0,0);
+      -webkit-transform: matrix(0.500, -0.333, 0.000, 0.667, 0,0);
+      -o-transform:      matrix(0.500, -0.333, 0.000, 0.667, 0,0);
+      transform:         matrix(0.500, -0.333, 0.000, 0.667, 0,0);
+      /*
+       ** You can anso use separate transformation commands, like these (they are not equivalent) **
+      -moz-transform: skewy(-35deg) scale(0.6);
+      -webkit-transform: skewy(-35deg) scale(0.6);
+      -o-transform: skewy(-35deg) scale(0.6);
+      -ms-transform: skewy(-35deg) scale(0.6);
+      transform: skewy(-35deg) scale(0.6);*/
     }
     .card.right {
-      -moz-transform: skewy(25deg) scale(0.6);
-      -webkit-transform: skewy(25deg) scale(0.6);
-      -o-transform: skewy(25deg) scale(0.6);
-      -ms-transform: skewy(25deg) scale(0.6);
-      transform: skewy(25deg) scale(0.6);
+      -webkit-transform:  matrix(0.500, 0.333, 0.000, 0.667, 0,0);
+      -moz-transform:     matrix(0.500, 0.333, 0.000, 0.667, 0,0);
+      -o-transform:       matrix(0.500, 0.333, 0.000, 0.667, 0,0);
+      transform:          matrix(0.500, 0.333, 0.000, 0.667, 0,0);
+      /*
+      -moz-transform: skewy(35deg) scale(0.6);
+      -webkit-transform: skewy(35deg) scale(0.6);
+      -o-transform: skewy(35deg) scale(0.6);
+      -ms-transform: skewy(35deg) scale(0.6);
+      transform: skewy(35deg) scale(0.6);*/
     }
-    .card.center{
-      margin: 10px 10px;
-      z-index: 2;
-    }
+    .card.center{ margin: 10px 15px; }
   </style>
   <script>
     $(function(){
@@ -60,15 +42,12 @@
         var clicked_index = $cards.index(this);
         var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
         var right_cards = $.map($cards,function(e,i){ return i>clicked_index ? $(e) : null; });
-        $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center'); });
-        $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center'); });
-        var left = $cards[clicked_index-1];
-        var right = $cards[clicked_index+1];
-        if (left!=null) { $(left).addClass('first') }
-        if (right!=null) { $(right).addClass('first') }
+        $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center first'); });
+        $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center first'); });
+        $($cards[clicked_index-1]).addClass("first");
+        $($cards[clicked_index+1]).addClass("first");
         $(this).removeClass('left right').addClass('center');
-        $(this).closest("#slider").css('margin-left', (clicked_index*-170)+'px')
-        
+        $(this).closest("#slider").css('margin-left', (clicked_index*-135)+'px')
       });
     });
   </script>
@@ -81,7 +60,7 @@
         <div class="card rounded-border center" style="background: #f6f6f6 url(coverflow_images/dreamglow.jpg);"></div>
         <div class="card rounded-border right first" style="background: #f6f6f6 url(coverflow_images/dreamglow_flower.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/OliBac.jpg);"></div>
-        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/OliBac_flower.jpg);"></div>
+        <div class="card rounded-border right temp" style="background: #f6f6f6 url(coverflow_images/OliBac_flower.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbertPhotography_beadsNheart.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbertPhotography_candy.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbetPhotography.jpg);"></div>
@@ -89,6 +68,7 @@
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/ViaMoi.jpg);"></div>
       </div>
     </div>
+    <div class="right-text">All images are Creative Common</div>
   </div>
   <div id="credits" class="rounded-border wrapper">
     Demo by Miguel Camba | <a href="mailto:miguel.camba@gmail.com">Email</a>

@@ -1,0 +1,32 @@
+#demo { overflow: hidden; }
+#slider{
+  width: 1000%;
+  padding-left: 320px;
+  -moz-transition-property:     margin;
+  -webkit-transition-property:  margin;
+  transition-property:          margin;
+  -moz-transition-duration:     1s;
+  -webkit-transition-duration:  1s;
+  -o-transition-duration:       1s;
+  transition-duration:          1s;
+}
+.card {
+  box-shadow:         #aaa 0 0 7px;
+  -webkit-box-shadow: #aaa 0 0 7px;
+  -moz-box-shadow:    #aaa 0 0 7px;
+  -o-box-shadow:      #aaa 0 0 7px;
+  float: left;
+  width: 300px;
+  height: 300px;
+  background: white;
+  margin: 10px -85px;
+  -moz-transition-property:     margin,transform,opacity;
+  -webkit-transition-property:  margin,transform,opacity;
+  transition-property:          margin,transform,opacity;
+  -moz-transition-duration:     1s;
+  -webkit-transition-duration:  1s;
+  -o-transition-duration:       1s;
+  transition-duration:          1s;
+}
+.card.left, .card.right { opacity: 0.07; }
+.card.left.first, .card.right.first { opacity: 0.6; }

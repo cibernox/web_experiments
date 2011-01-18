@@ -21,12 +21,13 @@ a{
 li { display: block; }
 /* USEFULL CLASSES */
 .center-text{ text-align: center;}
+.right-text{ text-align: right;}
 .wrapper{
   margin: 4% auto;
   width: 960px;
 }
 .rounded-border {
-  border: 3px solid #aaa;
+  border: 3px solid #999;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
