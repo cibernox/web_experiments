@@ -1,3 +1,4 @@
+/* ELEMENT'S STYLES */
 *{
   margin:0; padding:0;
   font-family: Helvetica, Arial, sans-serif;
@@ -8,23 +9,33 @@
 body{
   background-color: #f8f8f8;
 }
-h1{ font-size: 30px; font-weight: bold; }
-h2{ font-size: 25px; font-weight: bold; }
-h3{ font-size: 25px;}
+h1{ font-size: 30px; font-weight: bold; margin: 10px; }
+h2{ font-size: 25px; font-weight: bold; margin: 10px; }
+h3{ font-size: 25px; }
 h4{ font-size: 20px; font-weight: bold;}
-h5{ font-size: 20px;}
-a{ color: #6495ed;}
+h5{ font-size: 20px; }
+a{
+  color: #6495ed;
+  text-decoration: none;
+}
+li { display: block; }
+/* USEFULL CLASSES */
 .center-text{ text-align: center;}
 .wrapper{
   margin: 4% auto;
   width: 960px;
 }
-.rounded-border{
-  border: 2px solid #aaa;
+.rounded-border {
+  border: 3px solid #aaa;
   border-radius: 8px;
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
 }
+
+.half-float { float: left; width: 50%; }
+.half-inline { display: inline-block; width: 48%; }
+.float-right { float: right; }
+/* COMMON STYLES */
 #main{
   background-color: white;
   padding: 15px;

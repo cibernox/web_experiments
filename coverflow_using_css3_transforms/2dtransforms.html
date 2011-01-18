@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset=utf-8 />
+  <title>Coverflow using css 2D transforms</title>
+  <link href="../common.css" rel="stylesheet">
+  <script src="../jquery-1.5b1.js"></script>
+  <style>
+    #demo { overflow: hidden; }
+    #slider{
+      width: 1000%;
+      padding-left: 320px;
+      -moz-transition-property: margin;
+      -webkit-transition-property: margin;
+      transition-property: margin;
+      -moz-transition-duration: 1s;
+      -webkit-transition-duration: 1s;
+      -o-transition-duration: 1s;
+      transition-duration: 1s;
+    }
+    .card {
+      float: left;
+      width: 300px;
+      height: 300px; 
+      background: white;
+      margin: 10px -65px;
+      -moz-transition-property: margin,transform,opacity;
+      -webkit-transition-property: margin,transform,opacity;
+      transition-property: margin,transform,opacity;
+      -moz-transition-duration: 1s;
+      -webkit-transition-duration: 1s;
+      -o-transition-duration: 1s;
+      transition-duration: 1s;
+    }
+    .card.left, .card.right { opacity: 0.2; }
+    .card.left.first, .card.right.first { opacity: 0.5; }
+    .card.left {
+      -moz-transform: skewy(-25deg) scale(0.6);
+      -webkit-transform: skewy(-25deg) scale(0.6);
+      -o-transform: skewy(-25deg) scale(0.6);
+      -ms-transform: skewy(-25deg) scale(0.6);
+      transform: skewy(-25deg) scale(0.6);
+    }
+    .card.right {
+      -moz-transform: skewy(25deg) scale(0.6);
+      -webkit-transform: skewy(25deg) scale(0.6);
+      -o-transform: skewy(25deg) scale(0.6);
+      -ms-transform: skewy(25deg) scale(0.6);
+      transform: skewy(25deg) scale(0.6);
+    }
+    .card.center{
+      margin: 10px 10px;
+      z-index: 2;
+    }
+  </style>
+  <script>
+    $(function(){
+      $(".card").click(function(){
+        var $cards = $(".card");
+        var clicked_index = $cards.index(this);
+        var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
+        var right_cards = $.map($cards,function(e,i){ return i>clicked_index ? $(e) : null; });
+        $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center'); });
+        $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center'); });
+        var left = $cards[clicked_index-1];
+        var right = $cards[clicked_index+1];
+        if (left!=null) { $(left).addClass('first') }
+        if (right!=null) { $(right).addClass('first') }
+        $(this).removeClass('left right').addClass('center');
+        $(this).closest("#slider").css('margin-left', (clicked_index*-170)+'px')
+        
+      });
+    });
+  </script>
+</head>
+<body>
+<a href="http://github.com/cibernox/web_experiments"><img style="position: absolute; top: 0; left: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+  <div id="main" class="rounded-border wrapper">
+    <div id="demo">
+      <div id="slider">
+        <div class="card rounded-border center" style="background: #f6f6f6 url(coverflow_images/dreamglow.jpg);"></div>
+        <div class="card rounded-border right first" style="background: #f6f6f6 url(coverflow_images/dreamglow_flower.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/OliBac.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/OliBac_flower.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbertPhotography_beadsNheart.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbertPhotography_candy.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbetPhotography.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/ThomasShahan.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/ViaMoi.jpg);"></div>
+      </div>
+    </div>
+  </div>
+  <div id="credits" class="rounded-border wrapper">
+    Demo by Miguel Camba | <a href="mailto:miguel.camba@gmail.com">Email</a>
+    | <a href="http://github.com/cibernox">GitHub</a>
+    | <a href="http://twitter.com/#!/MiguelCamba">Twitter</a> | <a href="http://es.linkedin.com/in/miguelcamba">LinkedIn</a>
+    | <a href="http://masquerailes.wordpress.com/">Blog</a>
+  </div>
+</body>
+</html>
