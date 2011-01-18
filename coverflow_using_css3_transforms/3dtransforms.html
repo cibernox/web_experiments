@@ -5,8 +5,8 @@
   <title>Coverflow using css 2D transforms</title>
   <link href="../common.css" rel="stylesheet">
   <link href="cards.css" rel="stylesheet">
-  <script src="../jquery-1.5b1.js"></script>
-  <script src="../modernizr-1.6.min.js"></script>
+  <script src="../js/jquery-1.5b1.js"></script>
+  <script src="../js/modernizr-1.6.min.js"></script>
   <style>
     .card{ margin: 10px -110px; }
     .card.left {
@@ -29,7 +29,7 @@
   </style>
   <script>
     $(function(){
-      $(".card").click(function(){
+      $(".csstransforms3d .card").click(function(){
         var $cards = $(".card");
         var clicked_index = $cards.index(this);
         var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
@@ -52,7 +52,7 @@
         <div class="card rounded-border center" style="background: #f6f6f6 url(coverflow_images/dreamglow.jpg);"></div>
         <div class="card rounded-border right first" style="background: #f6f6f6 url(coverflow_images/dreamglow_flower.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/OliBac.jpg);"></div>
-        <div class="card rounded-border right temp" style="background: #f6f6f6 url(coverflow_images/OliBac_flower.jpg);"></div>
+        <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/OliBac_flower.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbertPhotography_beadsNheart.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbertPhotography_candy.jpg);"></div>
         <div class="card rounded-border right" style="background: #f6f6f6 url(coverflow_images/PinkSherbetPhotography.jpg);"></div>

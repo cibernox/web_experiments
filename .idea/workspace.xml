@@ -2,13 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="02904802-26e6-4fa0-b24e-0c626b792831" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/cards.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.angle.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.matrix.calculations.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.matrix.functions.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.matrix.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.transform.animate.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.transform.attributes.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.transform.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/switch_transforms.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/browser_detect.js" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/web experiments.iml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/Readme" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/jquery-1.5b1.js" afterPath="$PROJECT_DIR$/js/jquery-1.5b1.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/modernizr-1.6.min.js" afterPath="$PROJECT_DIR$/js/modernizr-1.6.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/common.css" afterPath="$PROJECT_DIR$/common.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/base.html" afterPath="$PROJECT_DIR$/base.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html" afterPath="$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="web experiments.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,16 +48,7 @@
           <file leaf-file-name="3dtransforms.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="10" column="32" selection-start="343" selection-end="343" vertical-scroll-proportion="-6.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="cards.css" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/cards.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="30" column="38" selection-start="943" selection-end="943" vertical-scroll-proportion="0.8231707">
+                <state line="42" column="9" selection-start="2066" selection-end="2066" vertical-scroll-proportion="-30.375">
                   <folding />
                 </state>
               </provider>
@@ -55,35 +57,23 @@
           <file leaf-file-name="2dtransforms.html" pinned="false" current="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="6" column="12" selection-start="163" selection-end="206" vertical-scroll-proportion="-2.7826087">
+                <state line="62" column="45" selection-start="3099" selection-end="3099" vertical-scroll-proportion="-20.869566">
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="base.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/base.html">
+          <file leaf-file-name="switch_transforms.html" pinned="false" current="true" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/switch_transforms.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state line="13" column="12" selection-start="0" selection-end="929" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/index.html">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="8" column="74" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="common.css" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/common.css">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
+                <state line="57" column="10" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.3802817">
+                  <folding>
+                    <marker date="1295377711000" expanded="true" signature="2247:2960" placeholder="{...}" />
+                    <marker date="1295377711000" expanded="true" signature="2977:3554" placeholder="{...}" />
+                    <marker date="1295377711000" expanded="true" signature="3150:3276" placeholder="{...}" />
+                    <marker date="1295377711000" expanded="true" signature="3392:3548" placeholder="{...}" />
+                    <marker date="1295377711000" expanded="true" signature="3478:3538" placeholder="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -142,10 +132,13 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/base.html" />
         <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html" />
-        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html" />
         <option value="$PROJECT_DIR$/common.css" />
         <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/cards.css" />
+        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html" />
+        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html" />
+        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/browser_detect.js" />
+        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform.animate.js" />
+        <option value="$PROJECT_DIR$/coverflow_using_css3_transforms/switch_transforms.html" />
       </list>
     </option>
   </component>
@@ -235,6 +228,11 @@
     <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyIdeSdkConfigurable" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugSession" factoryName="Remote">
@@ -333,13 +331,6 @@
         <state line="21" column="0" selection-start="181" selection-end="181" vertical-scroll-proportion="0.5762195" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="12" selection-start="0" selection-end="929" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="74" selection-start="262" selection-end="262" vertical-scroll-proportion="0.0">
@@ -347,23 +338,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="12" selection-start="163" selection-end="206" vertical-scroll-proportion="-2.7826087">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/common.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="32" selection-start="343" selection-end="343" vertical-scroll-proportion="-6.0">
+        <state line="29" column="24" selection-start="642" selection-end="642" vertical-scroll-proportion="0.32126698">
           <folding />
         </state>
       </provider>
@@ -372,6 +349,54 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="38" selection-start="943" selection-end="943" vertical-scroll-proportion="0.8231707">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="12" selection-start="0" selection-end="929" vertical-scroll-proportion="0.36619717">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/3dtransforms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="2066" selection-end="2066" vertical-scroll-proportion="-30.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/2dtransforms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="45" selection-start="3099" selection-end="3099" vertical-scroll-proportion="-20.869566">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/browser_detect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="21" selection-start="2522" selection-end="2522" vertical-scroll-proportion="0.96036583">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/jquery.transform/jquery.angle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/coverflow_using_css3_transforms/switch_transforms.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="10" selection-start="2886" selection-end="2886" vertical-scroll-proportion="0.3802817">
+          <folding>
+            <marker date="1295377711000" expanded="true" signature="2247:2960" placeholder="{...}" />
+            <marker date="1295377711000" expanded="true" signature="2977:3554" placeholder="{...}" />
+            <marker date="1295377711000" expanded="true" signature="3150:3276" placeholder="{...}" />
+            <marker date="1295377711000" expanded="true" signature="3392:3548" placeholder="{...}" />
+            <marker date="1295377711000" expanded="true" signature="3478:3538" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

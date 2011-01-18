@@ -2,53 +2,73 @@
 <html lang="en">
 <head>
   <meta charset=utf-8 />
-  <title>Coverflow using css 2D transforms</title>
+  <title>Coverflow using 2D/3D transforms depending on browser</title>
   <link href="../common.css" rel="stylesheet">
   <link href="cards.css" rel="stylesheet">
   <script src="../js/jquery-1.5b1.js"></script>
   <script src="../js/modernizr-1.6.min.js"></script>
+  <script src="../js/browser_detect.js"></script>
+  <script src="jquery.transform/jquery.transform.js"></script>
   <style>
-    .card.left {
+    /* 3D capable browser */
+    .csstransforms3d .card{ margin: 10px -110px; }
+    .csstransforms3d .card.left {
+      -moz-transform: perspective(500) rotateY(65deg) scale(0.65);
+      -webkit-transform: perspective(500) rotateY(65deg) scale(0.65);
+      -o-transform: perspective(500) rotateY(65deg) scale(0.65);
+      -ms-transform: perspective(500) rotateY(65deg) scale(0.65);
+      -khtml-transform: perspective(500) rotateY(65deg) scale(0.65);
+      transform: perspective(500) rotateY(65deg) scale(0.65);
+    }
+    .csstransforms3d .card.right {
+      -moz-transform: perspective(500) rotateY(-65deg) scale(0.65);
+      -webkit-transform: perspective(500) rotateY(-65deg) scale(0.65);
+      -o-transform: perspective(500) rotateY(-65deg) scale(0.65);
+      -ms-transform: perspective(500) rotateY(-65deg) scale(0.65);
+      -khtml-transform: perspective(500) rotateY(-65deg) scale(0.65);
+      transform: perspective(500) rotateY(-65deg) scale(0.65);
+    }
+    .csstransforms3d .card.center{ margin: 10px 5px; }
+    /* No 3D capable browser */
+    .no-csstransforms3d .card.left {
       -moz-transform:    matrix(0.500, -0.333, 0.000, 0.667, 0,0);
       -webkit-transform: matrix(0.500, -0.333, 0.000, 0.667, 0,0);
       -o-transform:      matrix(0.500, -0.333, 0.000, 0.667, 0,0);
       transform:         matrix(0.500, -0.333, 0.000, 0.667, 0,0);
-      /*
-       ** You can anso use separate transformation commands, like these (they are not equivalent) **
-      -moz-transform: skewy(-35deg) scale(0.6);
-      -webkit-transform: skewy(-35deg) scale(0.6);
-      -o-transform: skewy(-35deg) scale(0.6);
-      -ms-transform: skewy(-35deg) scale(0.6);
-      transform: skewy(-35deg) scale(0.6);*/
     }
-    .card.right {
+    .no-csstransforms3d .card.right {
       -webkit-transform:  matrix(0.500, 0.333, 0.000, 0.667, 0,0);
       -moz-transform:     matrix(0.500, 0.333, 0.000, 0.667, 0,0);
       -o-transform:       matrix(0.500, 0.333, 0.000, 0.667, 0,0);
       transform:          matrix(0.500, 0.333, 0.000, 0.667, 0,0);
-      /*
-      -moz-transform: skewy(35deg) scale(0.6);
-      -webkit-transform: skewy(35deg) scale(0.6);
-      -o-transform: skewy(35deg) scale(0.6);
-      -ms-transform: skewy(35deg) scale(0.6);
-      transform: skewy(35deg) scale(0.6);*/
     }
-    .card.center{ margin: 10px 15px; }
+    .no-csstransforms3d .card.center { margin: 10px 15px; }
   </style>
   <script>
+    function animateWithCSS3(card, step){
+      var $cards = $(".card");
+      var clicked_index = $cards.index(card);
+      var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
+      var right_cards = $.map($cards,function(e,i){ return i>clicked_index ? $(e) : null; });
+      $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center first'); });
+      $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center first'); });
+      $($cards[clicked_index-1]).addClass("first");
+      $($cards[clicked_index+1]).addClass("first");
+      $(card).removeClass('left right').addClass('center');
+      $(card).closest("#slider").css('margin-left', (clicked_index*step)+'px')
+    }
     $(function(){
-      $(".card").click(function(){
-        var $cards = $(".card");
-        var clicked_index = $cards.index(this);
-        var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
-        var right_cards = $.map($cards,function(e,i){ return i>clicked_index ? $(e) : null; });
-        $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center first'); });
-        $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center first'); });
-        $($cards[clicked_index-1]).addClass("first");
-        $($cards[clicked_index+1]).addClass("first");
-        $(this).removeClass('left right').addClass('center');
-        $(this).closest("#slider").css('margin-left', (clicked_index*-135)+'px')
-      });
+      // PURE CSS3 TRANSITIONS
+      $(".csstransitions.csstransforms3d .card").click(function(){ animateWithCSS3(this,-80) });
+      if (BrowserDetect.browser!='Firefox'){
+        $(".csstransitions.csstransforms.no-csstransforms3d .card").click(function(){ animateWithCSS3(this,-135) });
+      }
+      // FF4 suports transitions, but right-now (beta9), not on transform property, so we need some JS.
+      else {
+        $(".csstransitions.csstransforms.no-csstransforms3d .card").click(function(){
+          alert("Still thinking on a solution");
+        });
+      }
     });
   </script>
 </head>
