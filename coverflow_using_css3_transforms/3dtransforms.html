@@ -30,16 +30,12 @@
   <script>
     $(function(){
       $(".csstransforms3d .card").click(function(){
-        var $cards = $(".card");
-        var clicked_index = $cards.index(this);
-        var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
-        var right_cards = $.map($cards,function(e,i){ return i>clicked_index ? $(e) : null; });
-        $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center first'); });
-        $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center first'); });
-        $($cards[clicked_index-1]).addClass("first");
-        $($cards[clicked_index+1]).addClass("first");
+        $(this).prevAll(".card").addClass('left').removeClass('right center first');
+        $(this).nextAll(".card").addClass('right').removeClass('left center first');
+        $(this).prev(".card").addClass('first');
+        $(this).next(".card").addClass('first');
         $(this).removeClass('left right').addClass('center');
-        $(this).closest("#slider").css('margin-left', (clicked_index*-80)+'px')
+        $(this).closest("#slider").css('margin-left', ($(this).prevAll(".card").length*-80)+'px');
       });
     });
   </script>
@@ -65,7 +61,7 @@
   <div id="credits" class="rounded-border wrapper">
     Demo by Miguel Camba | <a href="mailto:miguel.camba@gmail.com">Email</a>
     | <a href="http://github.com/cibernox">GitHub</a>
-    | <a href="http://twitter.com/#!/MiguelCamba">Twitter</a> | <a href="http://es.linkedin.com/in/miguelcamba">LinkedIn</a>
+    | <a href="http://twitter.com/MiguelCamba">Twitter</a> | <a href="http://es.linkedin.com/in/miguelcamba">LinkedIn</a>
     | <a href="http://masquerailes.wordpress.com/">Blog</a>
   </div>
 </body>

@@ -46,25 +46,19 @@
   </style>
   <script>
     function animateWithCSS3(card, step){
-      var $cards = $(".card");
-      var clicked_index = $cards.index(card);
-      var left_cards = $.map($cards,function(e,i){ return i<clicked_index ? $(e) : null; });
-      var right_cards = $.map($cards,function(e,i){ return i>clicked_index ? $(e) : null; });
-      $.each(left_cards,function(i,$e){ $e.addClass('left').removeClass('right center first'); });
-      $.each(right_cards,function(i,$e){ $e.addClass('right').removeClass('left center first'); });
-      $($cards[clicked_index-1]).addClass("first");
-      $($cards[clicked_index+1]).addClass("first");
+      $(card).prevAll(".card").addClass('left').removeClass('right center first');
+      $(card).nextAll(".card").addClass('right').removeClass('left center first');
+      $(card).prev(".card").addClass('first');
+      $(card).next(".card").addClass('first');
       $(card).removeClass('left right').addClass('center');
-      $(card).closest("#slider").css('margin-left', (clicked_index*step)+'px')
+      $(card).closest("#slider").css('margin-left', ($(this).prevAll(".card").length*step)+'px');
     }
     $(function(){
       // PURE CSS3 TRANSITIONS
       $(".csstransitions.csstransforms3d .card").click(function(){ animateWithCSS3(this,-80) });
       if (BrowserDetect.browser!='Firefox'){
         $(".csstransitions.csstransforms.no-csstransforms3d .card").click(function(){ animateWithCSS3(this,-135) });
-      }
-      // FF4 suports transitions, but right-now (beta9), not on transform property, so we need some JS.
-      else {
+      } else { // FF4 suports transitions, but right-now (beta9), not on transform property, so we need some JS.
         $(".csstransitions.csstransforms.no-csstransforms3d .card").click(function(){
           alert("Still thinking on a solution");
         });
@@ -93,7 +87,7 @@
   <div id="credits" class="rounded-border wrapper">
     Demo by Miguel Camba | <a href="mailto:miguel.camba@gmail.com">Email</a>
     | <a href="http://github.com/cibernox">GitHub</a>
-    | <a href="http://twitter.com/#!/MiguelCamba">Twitter</a> | <a href="http://es.linkedin.com/in/miguelcamba">LinkedIn</a>
+    | <a href="http://twitter.com/MiguelCamba">Twitter</a> | <a href="http://es.linkedin.com/in/miguelcamba">LinkedIn</a>
     | <a href="http://masquerailes.wordpress.com/">Blog</a>
   </div>
 </body>
