@@ -32,17 +32,7 @@
   </component>
   <component name="FileColors" enabled="true" enabledForTabs="true" showNonProject="false" />
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="common.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/common.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="24" selection-start="642" selection-end="642" vertical-scroll-proportion="0.33431953">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindManager">
     <FindUsagesManager>
